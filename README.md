@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+To get started with this project, follow these steps:
+
+### 1. Clone the Repository
+
+Clone this repository to your local machine:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/roshankumar18/Schedule-meeting.git
+```
+### 2. Install Dependencies
+Navigate into the project directory and install the dependencies:
+```bash
+cd schedule-meeting
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Set Up Environment Variables
+add keys in env.local
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+DATABASE_URL=
+```
+ ### 4.Run the Development Server
+ ```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Server-Side :
 
-To learn more about Next.js, take a look at the following resources:
+#### NeonDB : 
+Selected as the database service for scalability and ease of use.It is fully managed serverless Postgres
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Drizzle-ORM: 
+Utilized for database interactions and CRUD operations. Drizzle-ORM simplifies database access with its intuitive API and efficient query execution.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Clerk: 
+Integrated for user authentication and authorization, and easy to integrate
 
-## Deploy on Vercel
+## Client-Server Communication:
+#### Route handlers: 
+Leveraged Next.js route handlers for server-side logic and data retrieval. It enable seamless communication between the client and server.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Assumptions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Fixed Buffer Periods: Buffer periods before and after meetings are assumed to be fixed and consistent for all day  of week.
+
+Default Meeting Duration: The default meeting duration is assumed to be one hour.
+
+Meeting Attendee : There can only be 2 people in meeting.
+
+## Challenge
+
+One of the main challenges I encountered during the data modeling process was determining the appropriate structure for representing user availability. After careful consideration, I decided to create a separate table for availability slots, with each slot corresponding to a specific day of the week and containing fields for start and end times. Another challenge was defining the relationships between different entities in the data model. For example, I needed to establish relationships between users and their scheduled meetings, as well as between users and their preferences. To address this challenge, I used foreign key in meetings table to establish relationship.
+
+
+## Potential Improvements and Additional Features
+
+As of now buffer period is same for whole week , we can allow personlized buffer period for each day.
+Integrate calender for better UI 
+
+
