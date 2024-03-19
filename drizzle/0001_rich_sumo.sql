@@ -1,0 +1,1 @@
+ALTER TABLE "availability" ADD COLUMN "user_id" integer;

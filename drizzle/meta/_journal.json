@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710668866666,
+      "tag": "0000_quiet_quicksilver",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710669048619,
+      "tag": "0001_rich_sumo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710671750901,
+      "tag": "0002_tranquil_lady_deathstrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710681113716,
+      "tag": "0003_minor_unus",
+      "breakpoints": true
+    }
+  ]
+}
